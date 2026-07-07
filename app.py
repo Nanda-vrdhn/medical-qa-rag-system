@@ -6,11 +6,11 @@ import streamlit as st
 ...
 import streamlit as st
 import os
-from src.document_processor import process_uploaded_file
-from src.vector_store import VectorStoreManager
-from src.retriever import RerankingRetriever
-from src.qa_chain import answer_question
-from src.evaluator import run_evaluation
+from document_processor import process_uploaded_file
+from vector_store import VectorStoreManager
+from retriever import RerankingRetriever
+from qa_chain import answer_question
+from evaluator import run_evaluation
 
 st.set_page_config(page_title="Medical QA System", page_icon="⚕️", layout="wide")
 
