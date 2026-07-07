@@ -19,7 +19,7 @@ Context: {context}
 
 def answer_question(query, docs, provider="Gemini", api_key=None):
     if not docs: return {"answer": "No context found.", "confidence_score": 0.0, "is_safe": True}
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=api_key or os.getenv("GOOGLE_API_KEY")) if provider == "Gemini" else ChatOpenAI(model="gpt-4o", openai_api_key=api_key or os.getenv("OPENAI_API_KEY"))
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key or os.getenv("GOOGLE_API_KEY")) if provider == "Gemini" else ChatOpenAI(model="gpt-4o", openai_api_key=api_key or os.getenv("OPENAI_API_KEY"))
     parser = JsonOutputParser(pydantic_object=QAResponse)
     chain = ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", "{question}\\n{format_instructions}")]) | llm | parser
     try: return chain.invoke({"context": "\\n".join([d.page_content for d in docs]), "question": query, "format_instructions": parser.get_format_instructions()})
