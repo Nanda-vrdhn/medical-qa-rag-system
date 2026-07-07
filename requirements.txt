@@ -1,0 +1,16 @@
+streamlit
+langchain
+langchain-community
+langchain-core
+chromadb
+sentence-transformers
+pdfplumber
+pytesseract
+pdf2image
+langchain-google-genai
+langchain-openai
+ragas
+langchain-google-vertexai
+pydantic
+Pillow
+datasets
