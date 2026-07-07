@@ -16,3 +16,4 @@ Pillow
 datasets
 pysqlite3-binary
 langchain-google-vertexai
+torchvision
